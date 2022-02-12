@@ -1,0 +1,28 @@
+version: "3"
+networks:
+    myapp:
+        external: true
+services:
+# add database
+    myapp-db:
+        image: postgres:10.13-alpine
+        volumes:
+            - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+        ports:
+            - 5432
+        environment:
+            - POSTGRES_USER=db-user
+            - POSTGRES_PASSWORD=db-password
+        networks:
+            - myapp
+# add application
+    myapp:
+        build: 
+            context: ./app
+            dockerfile: Dockerfile
+        environment:
+            - DB_URL=postgres://db-user:db-password@myapp-db:5432/myapp
+        depends_on:
+            - myapp-db
+        networks:
+            - myapp
