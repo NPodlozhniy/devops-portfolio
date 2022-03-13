@@ -15,7 +15,7 @@ $ run.sh
 See the [run.sh](https://github.com/NPodlozhniy/devops-portfolio/blob/master/app-with-db/run.sh) file for more details (especially the commented lines)
 
 ## Terraform
-You can find the basic implementation of running a virtual machine with a backing on the Yandex cloud in [terraform](https://github.com/NPodlozhniy/devops-portfolio/blob/master/terraform)
+You can find the basic implementation of raising a virtual machine with a backend on the Yandex Cloud with [terraform](https://github.com/NPodlozhniy/devops-portfolio/blob/master/terraform)
 
 #### Getting Started
 Perhaps better than documentation [Yandex Cloud Docs](https://cloud.yandex.com/en/docs/tutorials/infrastructure-management/terraform-quickstart) can not be described
@@ -26,7 +26,8 @@ You can use my [main.tf](https://github.com/NPodlozhniy/devops-portfolio/blob/ma
 
 Remember you also need to get pair of SSH key, for example see [this](https://phoenixnap.com/kb/generate-ssh-key-windows-10)
 
-#### Usage
+#### Basic Usage
+After you build your main.tf file
 ```
 $ terraform init
 $ terraform plan
